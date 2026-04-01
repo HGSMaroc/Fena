@@ -491,7 +491,7 @@
     pensés pour sublimer chaque type de peau et de cheveux. Formulés avec passion, 
     nos soins allient efficacité et plaisir des sens.
     <br><br>
-    في <strong>فينا كوزمتيكس</strong>، نصنع منتجات تجميل طبيعية وفاخرة، مصممة لإبراز جمال كل جلد وشعر.
+    في <strong>فنة كوزمتيكس</strong>، نصنع منتجات تجميل طبيعية وفاخرة، مصممة لإبراز جمال كل جلد وشعر.
   </p>
 </section>
 
@@ -529,4 +529,322 @@
     <div class="order-summary" id="orderSummary"></div>
 
     <div class="form-group">
-   
+      <label>Nom complet · الاسم الكامل</label>
+      <input type="text" id="fname" placeholder="Votre nom..." required>
+    </div>
+    <div class="form-group">
+      <label>Téléphone · رقم الهاتف</label>
+      <input type="tel" id="fphone" placeholder="06XXXXXXXX" required>
+    </div>
+    <div class="form-group">
+      <label>Ville · المدينة</label>
+      <input type="text" id="fcity" placeholder="Casablanca, Rabat..." required>
+    </div>
+    <div class="form-group">
+      <label>Adresse · العنوان</label>
+      <textarea id="faddress" placeholder="Votre adresse complète..."></textarea>
+    </div>
+    <div class="form-group">
+      <label>Notes (optionnel) · ملاحظات</label>
+      <textarea id="fnotes" placeholder="Informations supplémentaires..."></textarea>
+    </div>
+
+    <button class="submit-order" onclick="submitOrder()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Envoyer sur WhatsApp · إرسال عبر واتساب
+    </button>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">Fena</div>
+  <p class="footer-text">
+    Cosmétiques naturels & luxueux · مستحضرات تجميل طبيعية وفاخرة<br>
+    Livraison gratuite partout au Maroc<br>
+    التوصيل مجاني في جميع أنحاء المغرب
+  </p>
+  <p>📞 <a href="tel:0628282127" style="color:var(--gold);text-decoration:none;">0628 28 21 27</a></p>
+  <div class="footer-bottom">© 2025 Fena Cosmetics · Tous droits réservés</div>
+</footer>
+
+<script>
+// ── PRODUCT DATA ──
+const products = [
+  {
+    id: 1,
+    name: "Hair & Body Mist",
+    img: "1000234182.jpg",
+    desc: "Brume cheveux et corps · بخاخ للشعر والجسم",
+    price: 120,
+    badge: true
+  },
+  {
+    id: 2,
+    name: "Bath Salt Soak — Detox & Relax",
+    img: "1000234181.jpg",
+    desc: "Sel de bain détoxifiant & relaxant · ملح حمام منقي ومريح",
+    price: 90,
+    badge: false
+  },
+  {
+    id: 3,
+    name: "Shampoo Bar — Natural Healthy Shine",
+    img: "1000234180.jpg",
+    desc: "Shampoing solide — Réparation intense · شامبو صلب للشعر",
+    price: 85,
+    badge: false
+  },
+  {
+    id: 4,
+    name: "Colorful Body Polish",
+    img: "1000234179.jpg",
+    desc: "Gommage corps emulsifié · مقشر الجسم المستحلب",
+    price: 110,
+    badge: true
+  },
+  {
+    id: 5,
+    name: "Colorful Body Polish — Multi",
+    img: "1000234178.jpg",
+    desc: "Gommage corps coloré · مقشر ملون للجسم",
+    price: 110,
+    badge: false
+  },
+  {
+    id: 6,
+    name: "Herbal Bath Salt Soak",
+    img: "1000234177.jpg",
+    desc: "Soothing & Calming · مهدئ ومريح بالأعشاب",
+    price: 100,
+    badge: true
+  },
+  {
+    id: 7,
+    name: "Whipped Body Butter — Rose",
+    img: "1000233912.jpg",
+    desc: "Beurre corporel ultra hydratant · زبدة الجسم المخفوقة الوردية",
+    price: 130,
+    badge: false
+  },
+  {
+    id: 8,
+    name: "Whipped Body Butter — Lavande",
+    img: "1000233915.jpg",
+    desc: "Beurre corporel ultra hydratant · زبدة الجسم المخفوقة بالخزامى",
+    price: 130,
+    badge: true
+  },
+  {
+    id: 9,
+    name: "Whipped Body Butter — Violet",
+    img: "1000233918.jpg",
+    desc: "Beurre corporel ultra hydratant · زبدة الجسم البنفسجية",
+    price: 130,
+    badge: false
+  },
+  {
+    id: 10,
+    name: "Foaming Body Scrub — Purple",
+    img: "1000233921.jpg",
+    desc: "Gommage moussant · Nettoyant, Gommage & Hydratant tout-en-un",
+    price: 115,
+    badge: false
+  },
+  {
+    id: 11,
+    name: "Foaming Body Scrub — Rainbow",
+    img: "1000233924.jpg",
+    desc: "Gommage corps arc-en-ciel · مقشر قزح قوس",
+    price: 115,
+    badge: true
+  },
+  {
+    id: 12,
+    name: "Foaming Body Scrub — Coffee",
+    img: "1000233927.jpg",
+    desc: "Gommage corps au café · مقشر القهوة للجسم",
+    price: 115,
+    badge: false
+  },
+  {
+    id: 13,
+    name: "Foaming Body Scrub — Tropical",
+    img: "1000233930.jpg",
+    desc: "Gommage corps tropical coloré · مقشر جسم استوائي",
+    price: 115,
+    badge: false
+  },
+  {
+    id: 14,
+    name: "Whipped Body Butter — Blush",
+    img: "1000233933.jpg",
+    desc: "Beurre corporel rose ultra hydratant · زبدة الجسم الوردية الفاخرة",
+    price: 130,
+    badge: true
+  },
+  {
+    id: 15,
+    name: "Foaming Body Scrub — Pastel",
+    img: "1000233909.jpg",
+    desc: "Gommage corps pastel · مقشر جسم باستيل",
+    price: 115,
+    badge: false
+  }
+];
+
+// ── CART STATE ──
+let cart = [];
+
+// ── RENDER PRODUCTS ──
+function renderProducts() {
+  const grid = document.getElementById('productsGrid');
+  grid.innerHTML = products.map(p => `
+    <div class="product-card">
+      ${p.badge ? '<span class="product-badge-new">Nouveau</span>' : ''}
+      <img class="product-img" src="${p.img}" alt="${p.name}" onerror="this.style.background='#f0e8e0';this.style.height='260px';">
+      <div class="product-info">
+        <div class="product-name">${p.name}</div>
+        <div class="product-desc">${p.desc}</div>
+        <div class="product-price">${p.price} MAD</div>
+        <button class="add-to-cart" onclick="addToCart(${p.id})">
+          Ajouter au Panier · أضف للسلة
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── CART FUNCTIONS ──
+function addToCart(id) {
+  const product = products.find(p => p.id === id);
+  const existing = cart.find(item => item.id === id);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ ...product, qty: 1 });
+  }
+  updateCartUI();
+  openCart();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(item => item.id !== id);
+  updateCartUI();
+}
+
+function changeQty(id, delta) {
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) removeFromCart(id);
+  else updateCartUI();
+}
+
+function updateCartUI() {
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const count = cart.reduce((s, i) => s + i.qty, 0);
+  document.getElementById('cartCount').textContent = count;
+
+  const itemsEl = document.getElementById('cartItems');
+  const footerEl = document.getElementById('cartFooter');
+
+  if (cart.length === 0) {
+    itemsEl.innerHTML = '<div class="cart-empty">Votre panier est vide<br><small>سلة التسوق فارغة</small></div>';
+    footerEl.style.display = 'none';
+  } else {
+    itemsEl.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <img src="${item.img}" alt="${item.name}" onerror="this.style.background='#f0e8e0';">
+        <div class="cart-item-info">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-price">${item.price} MAD</div>
+          <div class="cart-item-qty">
+            <button class="qty-btn" onclick="changeQty(${item.id}, -1)">−</button>
+            <span class="qty-num">${item.qty}</span>
+            <button class="qty-btn" onclick="changeQty(${item.id}, 1)">+</button>
+          </div>
+        </div>
+        <button class="remove-item" onclick="removeFromCart(${item.id})">🗑</button>
+      </div>
+    `).join('');
+    document.getElementById('cartTotal').textContent = total + ' MAD';
+    footerEl.style.display = 'block';
+  }
+}
+
+function openCart() {
+  document.getElementById('cartOverlay').classList.add('open');
+  document.getElementById('cartPanel').classList.add('open');
+}
+function closeCart() {
+  document.getElementById('cartOverlay').classList.remove('open');
+  document.getElementById('cartPanel').classList.remove('open');
+}
+
+// ── ORDER FORM ──
+function openOrderForm() {
+  closeCart();
+  const summary = document.getElementById('orderSummary');
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  summary.innerHTML = `
+    <div class="order-summary-title">Récapitulatif · ملخص الطلب</div>
+    ${cart.map(item => `
+      <div class="order-line">
+        <span>${item.name} ×${item.qty}</span>
+        <span>${item.price * item.qty} MAD</span>
+      </div>
+    `).join('')}
+    <div class="order-line">
+      <span>🚚 Livraison</span><span style="color:#6aaa64;">Gratuite</span>
+    </div>
+    <div class="order-line total">
+      <span>Total</span><span>${total} MAD</span>
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+
+function submitOrder() {
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const city = document.getElementById('fcity').value.trim();
+  const address = document.getElementById('faddress').value.trim();
+  const notes = document.getElementById('fnotes').value.trim();
+
+  if (!name || !phone || !city) {
+    alert('Veuillez remplir les champs obligatoires · يرجى ملء الحقول المطلوبة');
+    return;
+  }
+
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const itemLines = cart.map(i => `• ${i.name} ×${i.qty} — ${i.price * i.qty} MAD`).join('\n');
+
+  const msg = `🛍️ *Nouvelle Commande — Fena Cosmetics*\n\n` +
+    `👤 *Nom:* ${name}\n` +
+    `📞 *Téléphone:* ${phone}\n` +
+    `📍 *Ville:* ${city}\n` +
+    `🏠 *Adresse:* ${address || 'Non précisée'}\n\n` +
+    `🛒 *Produits:*\n${itemLines}\n\n` +
+    `💰 *Total: ${total} MAD*\n` +
+    `🚚 *Livraison: Gratuite*\n` +
+    `💳 *Paiement: À la livraison*\n` +
+    (notes ? `\n📝 *Notes:* ${notes}` : '') +
+    `\n\n_الدفع عند الاستلام · Paiement à la livraison_`;
+
+  const encoded = encodeURIComponent(msg);
+  window.open(`https://wa.me/212628282127?text=${encoded}`, '_blank');
+  closeModal();
+  cart = [];
+  updateCartUI();
+}
+
+// ── INIT ──
+renderProducts();
+</script>
+</body>
+</html>
